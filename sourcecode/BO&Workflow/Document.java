@@ -3,6 +3,8 @@
  * @author M. Phan
  */
 public class Document {
+
+    
     private Immigrant immigrant;
     private Applicant applicant;
     int form;
@@ -25,9 +27,14 @@ public class Document {
      * @return
      */
     public static Document createDoc(Immigrant i, Applicant a, int form, int id){
-        Document d = new Document(i,a,form,id);
-        return d;
+        if (i == null || a == null || form < 0 || id < 0) {
+            return null;
+        }
+        return new Document(i,a,form,id);
+        
     }
+
+    // getters and setters
 
     public Applicant getApplicant(){
         return this.applicant;
@@ -53,16 +60,13 @@ public class Document {
         this.id = id;
     }
 
-    /**
-     * This method displays the document.
-     * @return
-     */
-    public String display(){
-        //UNSUPPORTED
-        return "";
+    public static void main(String[] args){
+        Document d = createDoc(null, null, -1, -1);
+        if (d == null){
+            System.out.println("Hello World!");
+        }
     }
 
-   
 
 
 
