@@ -23,7 +23,7 @@ class ImmigrantTest{
     assertEquals("Dummy Man", temp.getName());
     assertEquals("47925 Silly Lane", temp.getAddress());
     assertTrue(temp.getAge()==37);
-    assertTrue(temp.getID() == 475278);
+    assertTrue(temp.getRealID() == 475278);
   }
   @Test
   void instantiateInvalidInputTest()
@@ -75,7 +75,8 @@ class ImmigrantTest{
   void getInfoTestInvalid() //Check input validation from getInfo
   {
     Immigrant y = Immigrant.createImmigrant("Bob", "41234 Test Road", 9, 0);
-    assertNull(y.getInfo());
+    assertNull(y);
+    //assertNull(y.getInfo());
   }
   @Test
   void testVerifyImmigrant()  //test verify immigrant using a predetermined value
@@ -90,8 +91,4 @@ class ImmigrantTest{
     Immigrant y = null;
     assertFalse(Immigrant.verifyImmigrant(y));
   }
-  
-  
-  
-
 } 
