@@ -43,6 +43,8 @@ public class ViewDocument {
             Workflow.updateData("Approval",Workflow.getDoc(),false);
             JOptionPane.showMessageDialog(frame, "Document has been sent back to Reviewer.");
             frame.dispose();
+            frame.dispose();
+            new PersonEditorGUI(Workflow.getDoc());
         });
 
         approveButton.addActionListener(new ActionListener() {
