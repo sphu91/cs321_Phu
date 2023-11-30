@@ -1,9 +1,9 @@
 //Author: Phu Nguyen 
 import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
-class ApplicantTest{
+public class ApplicantTest{
   @Test
   //@SuppressWarnings("deprecation")
   void instantiateTestNull() //test if createApplicant creates an Applicant instance with parameters
@@ -24,7 +24,7 @@ class ApplicantTest{
     assertEquals("47925 Silly Lane", temp.getAddress());
     assertEquals("12345@gmail.com", temp.getEmail());
     assertTrue(temp.getAge()==37);
-    assertTrue(temp.getID() == 475278);
+    assertTrue(temp.getRealID() == 475278);
   }
   @Test
   void instantiateInvalidInputTest()
@@ -63,7 +63,7 @@ class ApplicantTest{
     assertTrue(x.getAge()>=0 && x.getAge()<=110);
     assertTrue(x.getAge()>=0 && x.getAge()<=9999999);    
     assertNotNull(x.getInfo());
-    assertEquals("Name: Jeff Mike, Address: 1475 Dog Street, Email: 12345@gmail.com Age: 25, ID Number: 10478", x.getInfo());
+    assertEquals("Name: Jeff Mike, Address: 1475 Dog Street, Email: 12345@gmail.com, Age: 25, ID Number: 10478", x.getInfo());
   }
   @Test
   void getInfoNullTest() //check null handling from getInfo
