@@ -46,6 +46,7 @@
                         </configuration>
                     </execution>
                 </executions>
+              <artifactId>javafx-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
