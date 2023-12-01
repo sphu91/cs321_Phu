@@ -33,7 +33,7 @@ jobs:
         mvn -B package
     - name: Run JUnit tests
       run: |
-        cd testcode
+        cd sourcecode/DataEntry/screenfx/
         mvn test
     - name: Update dependency graph
       run: |
