@@ -31,10 +31,11 @@ jobs:
       run: |
         cd sourcecode/DataEntry/screenfx/
         mvn -B package
-    - name: Run JUnit tests
+    - name: Build with Maven and Run JUnit tests
       run: |
         cd sourcecode/DataEntry/screenfx/
-        mvn test
+        mvn -B package test
+
     - name: Update dependency graph
       run: |
         cd sourcecode/DataEntry/screenfx/ && mvn com.github.ferstl:depgraph-maven-plugin:4.0.1:graph -DgraphFormat=json
